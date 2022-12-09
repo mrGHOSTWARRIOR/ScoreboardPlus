@@ -1,0 +1,479 @@
+#HEX COLORS AND & COLORS ARE AVAILABLE
+
+#Tablist ||| IMPORTANT !! USE %rank_display_name% TO DISPLAY EVERY LUCKPERMS PREFIX!
+update-tablist-prefix-and-sufix: true
+tab-list-prefix: '%rank_display_name%'
+tab-list-suffix: ' '
+
+tab-list-belowname-boolean: false
+tab-list-belowname: ''
+
+#Scoreboard (15 MAX LINES)
+animated-sidebar: true
+sidebar-lines: 15
+#if animated-sidebar option is false this will be read:
+sidebar-line-1: 'LINE1'
+sidebar-line-2: 'LINE2'
+sidebar-line-3: 'LINE3'
+sidebar-line-4: 'LINE4'
+sidebar-line-5: 'LINE5'
+sidebar-line-6: 'LINE6'
+sidebar-line-7: 'LINE7'
+sidebar-line-8: 'LINE8'
+sidebar-line-9: 'LINE9'
+sidebar-line-10: 'LINE10'
+sidebar-line-11: 'LINE11'
+sidebar-line-12: 'LINE12'
+sidebar-line-13: 'LINE13'
+sidebar-line-14: 'LINE14'
+sidebar-line-15: 'LINE15'
+#if animated-sidebar option is true this will be read:
+#SIDEBAR ANIMATIONS (MAX 10) ||| 20 TICKS EQUALS 1 SECOND
+animation-sidebar-lines: 5
+animated-bar-ticks: 10
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-1-sidebar-line-1: 'ANIMATION1'
+animation-1-sidebar-line-2: 'ANIMATION1'
+animation-1-sidebar-line-3: 'ANIMATION1'
+animation-1-sidebar-line-4: 'ANIMATION1'
+animation-1-sidebar-line-5: 'ANIMATION1'
+animation-1-sidebar-line-6: 'ANIMATION1'
+animation-1-sidebar-line-7: 'ANIMATION1'
+animation-1-sidebar-line-8: 'ANIMATION1'
+animation-1-sidebar-line-9: 'ANIMATION1'
+animation-1-sidebar-line-10: 'ANIMATION1'
+animation-1-sidebar-line-11: 'ANIMATION1'
+animation-1-sidebar-line-12: 'ANIMATION1'
+animation-1-sidebar-line-13: 'ANIMATION1'
+animation-1-sidebar-line-14: 'ANIMATION1'
+animation-1-sidebar-line-15: 'ANIMATION1'
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-2-sidebar-line-1: 'ANIMATION2'
+animation-2-sidebar-line-2: 'ANIMATION2'
+animation-2-sidebar-line-3: 'ANIMATION2'
+animation-2-sidebar-line-4: 'ANIMATION2'
+animation-2-sidebar-line-5: 'ANIMATION2'
+animation-2-sidebar-line-6: 'ANIMATION2'
+animation-2-sidebar-line-7: 'ANIMATION2'
+animation-2-sidebar-line-8: 'ANIMATION2'
+animation-2-sidebar-line-9: 'ANIMATION2'
+animation-2-sidebar-line-10: 'ANIMATION2'
+animation-2-sidebar-line-11: 'ANIMATION2'
+animation-2-sidebar-line-12: 'ANIMATION2'
+animation-2-sidebar-line-13: 'ANIMATION2'
+animation-2-sidebar-line-14: 'ANIMATION2'
+animation-2-sidebar-line-15: 'ANIMATION2'
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-3-sidebar-line-1: 'ANIMATION3'
+animation-3-sidebar-line-2: 'ANIMATION3'
+animation-3-sidebar-line-3: 'ANIMATION3'
+animation-3-sidebar-line-4: 'ANIMATION3'
+animation-3-sidebar-line-5: 'ANIMATION3'
+animation-3-sidebar-line-6: 'ANIMATION3'
+animation-3-sidebar-line-7: 'ANIMATION3'
+animation-3-sidebar-line-8: 'ANIMATION3'
+animation-3-sidebar-line-9: 'ANIMATION3'
+animation-3-sidebar-line-10: 'ANIMATION3'
+animation-3-sidebar-line-11: 'ANIMATION3'
+animation-3-sidebar-line-12: 'ANIMATION3'
+animation-3-sidebar-line-13: 'ANIMATION3'
+animation-3-sidebar-line-14: 'ANIMATION3'
+animation-3-sidebar-line-15: 'ANIMATION3'
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-4-sidebar-line-1: 'ANIMATION4'
+animation-4-sidebar-line-2: 'ANIMATION4'
+animation-4-sidebar-line-3: 'ANIMATION4'
+animation-4-sidebar-line-4: 'ANIMATION4'
+animation-4-sidebar-line-5: 'ANIMATION4'
+animation-4-sidebar-line-6: 'ANIMATION4'
+animation-4-sidebar-line-7: 'ANIMATION4'
+animation-4-sidebar-line-8: 'ANIMATION4'
+animation-4-sidebar-line-9: 'ANIMATION4'
+animation-4-sidebar-line-10: 'ANIMATION4'
+animation-4-sidebar-line-11: 'ANIMATION4'
+animation-4-sidebar-line-12: 'ANIMATION4'
+animation-4-sidebar-line-13: 'ANIMATION4'
+animation-4-sidebar-line-14: 'ANIMATION4'
+animation-4-sidebar-line-15: 'ANIMATION4'
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-5-sidebar-line-1: 'ANIMATION5'
+animation-5-sidebar-line-2: 'ANIMATION5'
+animation-5-sidebar-line-3: 'ANIMATION5'
+animation-5-sidebar-line-4: 'ANIMATION5'
+animation-5-sidebar-line-5: 'ANIMATION5'
+animation-5-sidebar-line-6: 'ANIMATION5'
+animation-5-sidebar-line-7: 'ANIMATION5'
+animation-5-sidebar-line-8: 'ANIMATION5'
+animation-5-sidebar-line-9: 'ANIMATION5'
+animation-5-sidebar-line-10: 'ANIMATION5'
+animation-5-sidebar-line-11: 'ANIMATION5'
+animation-5-sidebar-line-12: 'ANIMATION5'
+animation-5-sidebar-line-13: 'ANIMATION5'
+animation-5-sidebar-line-14: 'ANIMATION5'
+animation-5-sidebar-line-15: 'ANIMATION5'
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-6-sidebar-line-1: 'ANIMATION6'
+animation-6-sidebar-line-2: 'ANIMATION6'
+animation-6-sidebar-line-3: 'ANIMATION6'
+animation-6-sidebar-line-4: 'ANIMATION6'
+animation-6-sidebar-line-5: 'ANIMATION6'
+animation-6-sidebar-line-6: 'ANIMATION6'
+animation-6-sidebar-line-7: 'ANIMATION6'
+animation-6-sidebar-line-8: 'ANIMATION6'
+animation-6-sidebar-line-9: 'ANIMATION6'
+animation-6-sidebar-line-10: 'ANIMATION6'
+animation-6-sidebar-line-11: 'ANIMATION6'
+animation-6-sidebar-line-12: 'ANIMATION6'
+animation-6-sidebar-line-13: 'ANIMATION6'
+animation-6-sidebar-line-14: 'ANIMATION6'
+animation-6-sidebar-line-15: 'ANIMATION6'
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-7-sidebar-line-1: 'ANIMATION7'
+animation-7-sidebar-line-2: 'ANIMATION7'
+animation-7-sidebar-line-3: 'ANIMATION7'
+animation-7-sidebar-line-4: 'ANIMATION7'
+animation-7-sidebar-line-5: 'ANIMATION7'
+animation-7-sidebar-line-6: 'ANIMATION7'
+animation-7-sidebar-line-7: 'ANIMATION7'
+animation-7-sidebar-line-8: 'ANIMATION7'
+animation-7-sidebar-line-9: 'ANIMATION7'
+animation-7-sidebar-line-10: 'ANIMATION7'
+animation-7-sidebar-line-11: 'ANIMATION7'
+animation-7-sidebar-line-12: 'ANIMATION7'
+animation-7-sidebar-line-13: 'ANIMATION7'
+animation-7-sidebar-line-14: 'ANIMATION7'
+animation-7-sidebar-line-15: 'ANIMATION7'
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-8-sidebar-line-1: 'ANIMATION8'
+animation-8-sidebar-line-2: 'ANIMATION8'
+animation-8-sidebar-line-3: 'ANIMATION8'
+animation-8-sidebar-line-4: 'ANIMATION8'
+animation-8-sidebar-line-5: 'ANIMATION8'
+animation-8-sidebar-line-6: 'ANIMATION8'
+animation-8-sidebar-line-7: 'ANIMATION8'
+animation-8-sidebar-line-8: 'ANIMATION8'
+animation-8-sidebar-line-9: 'ANIMATION8'
+animation-8-sidebar-line-10: 'ANIMATION8'
+animation-8-sidebar-line-11: 'ANIMATION8'
+animation-8-sidebar-line-12: 'ANIMATION8'
+animation-8-sidebar-line-13: 'ANIMATION8'
+animation-8-sidebar-line-14: 'ANIMATION8'
+animation-8-sidebar-line-15: 'ANIMATION8'
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-9-sidebar-line-1: 'ANIMATION9'
+animation-9-sidebar-line-2: 'ANIMATION9'
+animation-9-sidebar-line-3: 'ANIMATION9'
+animation-9-sidebar-line-4: 'ANIMATION9'
+animation-9-sidebar-line-5: 'ANIMATION9'
+animation-9-sidebar-line-6: 'ANIMATION9'
+animation-9-sidebar-line-7: 'ANIMATION9'
+animation-9-sidebar-line-8: 'ANIMATION9'
+animation-9-sidebar-line-9: 'ANIMATION9'
+animation-9-sidebar-line-10: 'ANIMATION9'
+animation-9-sidebar-line-11: 'ANIMATION9'
+animation-9-sidebar-line-12: 'ANIMATION9'
+animation-9-sidebar-line-13: 'ANIMATION9'
+animation-9-sidebar-line-14: 'ANIMATION9'
+animation-9-sidebar-line-15: 'ANIMATION9'
+
+#ANIMATION 1 FULL SCOREBOARD
+animation-10-sidebar-line-1: 'ANIMATION10'
+animation-10-sidebar-line-2: 'ANIMATION10'
+animation-10-sidebar-line-3: 'ANIMATION10'
+animation-10-sidebar-line-4: 'ANIMATION10'
+animation-10-sidebar-line-5: 'ANIMATION10'
+animation-10-sidebar-line-6: 'ANIMATION10'
+animation-10-sidebar-line-7: 'ANIMATION10'
+animation-10-sidebar-line-8: 'ANIMATION10'
+animation-10-sidebar-line-9: 'ANIMATION10'
+animation-10-sidebar-line-10: 'ANIMATION10'
+animation-10-sidebar-line-11: 'ANIMATION10'
+animation-10-sidebar-line-12: 'ANIMATION10'
+animation-10-sidebar-line-13: 'ANIMATION10'
+animation-10-sidebar-line-14: 'ANIMATION10'
+animation-10-sidebar-line-15: 'ANIMATION10'
+
+
+
+
+
+
+
+
+animated-sidebar-title: true
+#if sede bar is not animated:
+sidebar-title: 'title'
+
+#ANIMATED BAR LINES (100 MAX) ||| 20 TICKS == 1 SECOND
+#this is sidebar title:
+animation-bar-lines: 100
+animation-sidebar-ticks-title: 2
+
+animated-bar-line-1: 'ANIMATION1'
+animated-bar-line-2: 'ANIMATION2'
+animated-bar-line-3: 'ANIMATION3'
+animated-bar-line-4: 'ANIMATION4'
+animated-bar-line-5: 'ANIMATION5'
+animated-bar-line-6: 'ANIMATION6'
+animated-bar-line-7: 'ANIMATION7'
+animated-bar-line-8: 'ANIMATION8'
+animated-bar-line-9: 'ANIMATION9'
+animated-bar-line-10: 'ANIMATION10'
+animated-bar-line-11: 'ANIMATION11'
+animated-bar-line-12: 'ANIMATION12'
+animated-bar-line-13: 'ANIMATION13'
+animated-bar-line-14: 'ANIMATION14'
+animated-bar-line-15: 'ANIMATION15'
+animated-bar-line-16: 'ANIMATION16'
+animated-bar-line-17: 'ANIMATION17'
+animated-bar-line-18: 'ANIMATION18'
+animated-bar-line-19: 'ANIMATION19'
+animated-bar-line-20: 'ANIMATION20'
+animated-bar-line-21: 'ANIMATION21'
+animated-bar-line-22: 'ANIMATION22'
+animated-bar-line-23: 'ANIMATION23'
+animated-bar-line-24: 'ANIMATION24'
+animated-bar-line-25: 'ANIMATION25'
+animated-bar-line-26: 'ANIMATION26'
+animated-bar-line-27: 'ANIMATION27'
+animated-bar-line-28: 'ANIMATION28'
+animated-bar-line-29: 'ANIMATION29'
+animated-bar-line-30: 'ANIMATION20'
+animated-bar-line-31: 'ANIMATION31'
+animated-bar-line-32: 'ANIMATION32'
+animated-bar-line-33: 'ANIMATION33'
+animated-bar-line-34: 'ANIMATION34'
+animated-bar-line-35: 'ANIMATION35'
+animated-bar-line-36: 'ANIMATION36'
+animated-bar-line-37: 'ANIMATION37'
+animated-bar-line-38: 'ANIMATION38'
+animated-bar-line-39: 'ANIMATION39'
+animated-bar-line-40: 'ANIMATION40'
+animated-bar-line-41: 'ANIMATION41'
+animated-bar-line-42: 'ANIMATION42'
+animated-bar-line-43: 'ANIMATION43'
+animated-bar-line-44: 'ANIMATION44'
+animated-bar-line-45: 'ANIMATION45'
+animated-bar-line-46: 'ANIMATION46'
+animated-bar-line-47: 'ANIMATION47'
+animated-bar-line-48: 'ANIMATION48'
+animated-bar-line-49: 'ANIMATION49'
+animated-bar-line-50: 'ANIMATION50'
+animated-bar-line-51: 'ANIMATION51'
+animated-bar-line-52: 'ANIMATION52'
+animated-bar-line-53: 'ANIMATION53'
+animated-bar-line-54: 'ANIMATION54'
+animated-bar-line-55: 'ANIMATION55'
+animated-bar-line-56: 'ANIMATION56'
+animated-bar-line-57: 'ANIMATION57'
+animated-bar-line-58: 'ANIMATION58'
+animated-bar-line-59: 'ANIMATION59'
+animated-bar-line-60: 'ANIMATION60'
+animated-bar-line-61: 'ANIMATION61'
+animated-bar-line-62: 'ANIMATION62'
+animated-bar-line-63: 'ANIMATION63'
+animated-bar-line-64: 'ANIMATION64'
+animated-bar-line-65: 'ANIMATION65'
+animated-bar-line-66: 'ANIMATION66'
+animated-bar-line-67: 'ANIMATION67'
+animated-bar-line-68: 'ANIMATION68'
+animated-bar-line-69: 'ANIMATION69'
+animated-bar-line-70: 'ANIMATION70'
+animated-bar-line-71: 'ANIMATION71'
+animated-bar-line-72: 'ANIMATION72'
+animated-bar-line-73: 'ANIMATION73'
+animated-bar-line-74: 'ANIMATION74'
+animated-bar-line-75: 'ANIMATION75'
+animated-bar-line-76: 'ANIMATION76'
+animated-bar-line-77: 'ANIMATION77'
+animated-bar-line-78: 'ANIMATION78'
+animated-bar-line-79: 'ANIMATION79'
+animated-bar-line-80: 'ANIMATION80'
+animated-bar-line-81: 'ANIMATION81'
+animated-bar-line-82: 'ANIMATION82'
+animated-bar-line-83: 'ANIMATION83'
+animated-bar-line-84: 'ANIMATION84'
+animated-bar-line-85: 'ANIMATION85'
+animated-bar-line-86: 'ANIMATION86'
+animated-bar-line-87: 'ANIMATION87'
+animated-bar-line-88: 'ANIMATION88'
+animated-bar-line-89: 'ANIMATION89'
+animated-bar-line-90: 'ANIMATION90'
+animated-bar-line-91: 'ANIMATION91'
+animated-bar-line-92: 'ANIMATION92'
+animated-bar-line-93: 'ANIMATION93'
+animated-bar-line-94: 'ANIMATION94'
+animated-bar-line-95: 'ANIMATION95'
+animated-bar-line-96: 'ANIMATION96'
+animated-bar-line-97: 'ANIMATION97'
+animated-bar-line-98: 'ANIMATION98'
+animated-bar-line-99: 'ANIMATION99'
+animated-bar-line-100: 'ANIMATION100'
+
+#This options makes the footer and header update its information this may make the plugin a bit heavier!
+update-footer-header: true
+
+#TAB-LIST-HEADER (5 MAX LINES)
+animated-footer: true
+tab-header-lines: 5
+tab-header-line-1: 'Line1'
+tab-header-line-2: 'Line2'
+tab-header-line-3: 'Line3'
+tab-header-line-4: 'Line4'
+tab-header-line-5: 'Line5'
+
+#TAB-LIST-FOOTER (5 MAX LINES)
+
+tab-footer-lines: 5
+tab-footer-line-1: 'Line1'
+tab-footer-line-2: 'Line2'
+tab-footer-line-3: 'Line3'
+tab-footer-line-4: 'Line4'
+tab-footer-line-5: 'Line5'
+
+
+#ANIMATED HEADER AND FOOTER  ||| ANIMATIONS(10 MAX)
+animated-header-and-footer: true
+animated-tab-footer-lines: 5
+animated-tab-header-lines: 5
+animatios-header-and-footer: 10
+animated-tab-footer-and-header-ticks: 20
+##LINES
+#Bar1
+animated-1-tab-header-line-1: 'ANIMATION1'
+animated-1-tab-header-line-2: 'ANIMATION1'
+animated-1-tab-header-line-3: 'ANIMATION1'
+animated-1-tab-header-line-4: 'ANIMATION1'
+animated-1-tab-header-line-5: 'ANIMATION1'
+##tablist names
+animated-1-tab-footer-line-1: 'ANIMATION1'
+animated-1-tab-footer-line-2: 'ANIMATION1'
+animated-1-tab-footer-line-3: 'ANIMATION1'
+animated-1-tab-footer-line-4: 'ANIMATION1'
+animated-1-tab-footer-line-5: 'ANIMATION1'
+
+#Bar2
+animated-2-tab-header-line-1: 'ANIMATION2'
+animated-2-tab-header-line-2: 'ANIMATION2'
+animated-2-tab-header-line-3: 'ANIMATION2'
+animated-2-tab-header-line-4: 'ANIMATION2'
+animated-2-tab-header-line-5: 'ANIMATION2'
+##tablist names
+animated-2-tab-footer-line-1: 'ANIMATION2'
+animated-2-tab-footer-line-2: 'ANIMATION2'
+animated-2-tab-footer-line-3: 'ANIMATION2'
+animated-2-tab-footer-line-4: 'ANIMATION2'
+animated-2-tab-footer-line-5: 'ANIMATION2'
+
+#Bar3
+animated-3-tab-header-line-1: 'ANIMATION3'
+animated-3-tab-header-line-2: 'ANIMATION3'
+animated-3-tab-header-line-3: 'ANIMATION3'
+animated-3-tab-header-line-4: 'ANIMATION3'
+animated-3-tab-header-line-5: 'ANIMATION3'
+##tablist names
+animated-3-tab-footer-line-1: 'ANIMATION3'
+animated-3-tab-footer-line-2: 'ANIMATION3'
+animated-3-tab-footer-line-3: 'ANIMATION3'
+animated-3-tab-footer-line-4: 'ANIMATION3'
+animated-3-tab-footer-line-5: 'ANIMATION3'
+
+#Bar4
+animated-4-tab-header-line-1: 'ANIMATION4'
+animated-4-tab-header-line-2: 'ANIMATION4'
+animated-4-tab-header-line-3: 'ANIMATION4'
+animated-4-tab-header-line-4: 'ANIMATION4'
+animated-4-tab-header-line-5: 'ANIMATION4'
+##tablist names
+animated-4-tab-footer-line-1: 'ANIMATION4'
+animated-4-tab-footer-line-2: 'ANIMATION4'
+animated-4-tab-footer-line-3: 'ANIMATION4'
+animated-4-tab-footer-line-4: 'ANIMATION4'
+animated-4-tab-footer-line-5: 'ANIMATION4'
+
+#Bar5
+animated-5-tab-header-line-1: 'ANIMATION5'
+animated-5-tab-header-line-2: 'ANIMATION5'
+animated-5-tab-header-line-3: 'ANIMATION5'
+animated-5-tab-header-line-4: 'ANIMATION5'
+animated-5-tab-header-line-5: 'ANIMATION5'
+##tablist names
+animated-5-tab-footer-line-1: 'ANIMATION5'
+animated-5-tab-footer-line-2: 'ANIMATION5'
+animated-5-tab-footer-line-3: 'ANIMATION5'
+animated-5-tab-footer-line-4: 'ANIMATION5'
+animated-5-tab-footer-line-5: 'ANIMATION5'
+
+#Bar6
+animated-6-tab-header-line-1: 'ANIMATION6'
+animated-6-tab-header-line-2: 'ANIMATION6'
+animated-6-tab-header-line-3: 'ANIMATION6'
+animated-6-tab-header-line-4: 'ANIMATION6'
+animated-6-tab-header-line-5: 'ANIMATION6'
+##tablist names
+animated-6-tab-footer-line-1: 'ANIMATION6'
+animated-6-tab-footer-line-2: 'ANIMATION6'
+animated-6-tab-footer-line-3: 'ANIMATION6'
+animated-6-tab-footer-line-4: 'ANIMATION6'
+animated-6-tab-footer-line-5: 'ANIMATION6'
+
+#Bar7
+animated-7-tab-header-line-1: 'ANIMATION7'
+animated-7-tab-header-line-2: 'ANIMATION7'
+animated-7-tab-header-line-3: 'ANIMATION7'
+animated-7-tab-header-line-4: 'ANIMATION7'
+animated-7-tab-header-line-5: 'ANIMATION7'
+##tablist names
+animated-7-tab-footer-line-1: 'ANIMATION7'
+animated-7-tab-footer-line-2: 'ANIMATION7'
+animated-7-tab-footer-line-3: 'ANIMATION7'
+animated-7-tab-footer-line-4: 'ANIMATION7'
+animated-7-tab-footer-line-5: 'ANIMATION7'
+
+#Bar8
+animated-8-tab-header-line-1: 'ANIMATION8'
+animated-8-tab-header-line-2: 'ANIMATION8'
+animated-8-tab-header-line-3: 'ANIMATION8'
+animated-8-tab-header-line-4: 'ANIMATION8'
+animated-8-tab-header-line-5: 'ANIMATION8'
+##tablist names
+animated-8-tab-footer-line-1: 'ANIMATION8'
+animated-8-tab-footer-line-2: 'ANIMATION8'
+animated-8-tab-footer-line-3: 'ANIMATION8'
+animated-8-tab-footer-line-4: 'ANIMATION8'
+animated-8-tab-footer-line-5: 'ANIMATION8'
+
+#Bar9
+animated-9-tab-header-line-1: 'ANIMATION9'
+animated-9-tab-header-line-2: 'ANIMATION9'
+animated-9-tab-header-line-3: 'ANIMATION9'
+animated-9-tab-header-line-4: 'ANIMATION9'
+animated-9-tab-header-line-5: 'ANIMATION9'
+##tablist names
+animated-9-tab-footer-line-1: 'ANIMATION9'
+animated-9-tab-footer-line-2: 'ANIMATION9'
+animated-9-tab-footer-line-3: 'ANIMATION9'
+animated-9-tab-footer-line-4: 'ANIMATION9'
+animated-9-tab-footer-line-5: 'ANIMATION9'
+
+#Bar10
+animated-10-tab-header-line-1: 'ANIMATION10'
+animated-10-tab-header-line-2: 'ANIMATION10'
+animated-10-tab-header-line-3: 'ANIMATION10'
+animated-10-tab-header-line-4: 'ANIMATION10'
+animated-10-tab-header-line-5: 'ANIMATION10'
+##tablist names
+animated-10-tab-footer-line-1: 'ANIMATION10'
+animated-10-tab-footer-line-2: 'ANIMATION10'
+animated-10-tab-footer-line-3: 'ANIMATION10'
+animated-10-tab-footer-line-4: 'ANIMATION10'
+animated-10-tab-footer-line-5: 'ANIMATION10'

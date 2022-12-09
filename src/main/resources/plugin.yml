@@ -1,0 +1,9 @@
+name: ScoreboardPlus
+version: '${project.version}'
+main: me.mrghostwarrior.tablistplus.ScoreboardPlus
+api-version: 1.18
+authors: [ mrGHOSTWARRIOR ]
+description: Scoreboard Plus
+commands:
+  spreload:
+    description: reload Scoreboard Plus config
