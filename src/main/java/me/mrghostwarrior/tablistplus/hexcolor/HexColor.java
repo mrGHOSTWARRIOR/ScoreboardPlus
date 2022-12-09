@@ -1,6 +1,7 @@
 package me.mrghostwarrior.tablistplus.hexcolor;
 
 import me.clip.placeholderapi.PlaceholderAPI;
+import me.mrghostwarrior.tablistplus.intance.PluginInstace;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -22,7 +23,8 @@ public class HexColor {
     }
     //translate all codes
     public static String translate(Player player, String input){
-        if (Bukkit.getServer().getPluginManager().getPlugin("PlaceholderAPI")!=null){
+
+        if (PluginInstace.checkPlaceholderAPI()){
             return org.bukkit.ChatColor.translateAlternateColorCodes('&', translatehex(PlaceholderAPI.setPlaceholders(player, input)));
         }
         return org.bukkit.ChatColor.translateAlternateColorCodes('&', translatehex(input));
