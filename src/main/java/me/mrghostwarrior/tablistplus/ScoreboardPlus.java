@@ -33,8 +33,24 @@ public final class ScoreboardPlus extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', " &f&l&c&lThanks for using &b&lScoreboard&f&lPlus"));
         Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&l----------------------------------------"));
 
-
+        //Bukkit Runnable
         getScoreboradManager().updateTabListName();
+        if (!LangManager.getAminatedSideBarBoolean()){
+            getScoreboradManager().updatesidebar();
+        }else {
+            getScoreboradManager().animatedSidebar();
+        }
+        if (LangManager.getAnimatedHeaderAndFooter()){
+            getScoreboradManager().animatedheaterandfooter();
+        }else {
+            if (LangManager.getUpdateFooterAndHeader()){
+                getScoreboradManager().updatetablistfooterandheater();
+            }
+        }
+        if (LangManager.getAminatedSideBarTitleBoolean()){
+            getScoreboradManager().startanimationtitle();
+        }
+
 
     }
 

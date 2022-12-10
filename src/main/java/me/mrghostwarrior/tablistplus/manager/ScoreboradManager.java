@@ -6,7 +6,6 @@ import me.mrghostwarrior.tablistplus.intance.PluginInstace;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.model.group.Group;
-import net.luckperms.api.model.group.GroupManager;
 import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -32,40 +31,34 @@ public class ScoreboradManager {
     }
 
 
-    public void startanimationtitle(Player player) {
+    public void startanimationtitle() {
         new BukkitRunnable() {
             int count = 0;
             final int max = LangManager.getAnimatedbarLines() + 1;
 
             public void run() {
-                if (player.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null) {
-                    cancel();
-                    return;
-                }
-                if (!player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getName().equalsIgnoreCase("mainscoreboard")) {
-                    cancel();
-                    return;
-                }
-
                 if (count == max) {
                     count = 0;
                 }
-                if (LangManager.getAminatedSideBarTitleBoolean()) {
-                    player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).setDisplayName(HexColor.translate(player, LangManager.getAnimatedSidebarTile(count)));
+                for (Player player : Bukkit.getOnlinePlayers()){
+                    if (player.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null) {
+                        return;
+                    }
+                    if (!player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getName().equalsIgnoreCase("mainscoreboard")) {
+                        return;
+                    }
+                    if (LangManager.getAminatedSideBarTitleBoolean()) {
+                        player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).setDisplayName(HexColor.translate(player, LangManager.getAnimatedSidebarTile(count)));
+                    }
                 }
                 count++;
             }
         }.runTaskTimer(scoreboardplus, 0, LangManager.getSidebarAmintationTicksTitle());
     }
 
-    public void updatesidebar(Player player) {
+    public void updatesidebar() {
         new BukkitRunnable() {
             public void run() {
-                if (player.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null ||
-                        !player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getName().equalsIgnoreCase("mainscoreboard")) {
-                    cancel();
-                    return;
-                }
                 int lines = LangManager.getSideBarLinesInt();
                 int linenumber = 1;
                 if (lines <= 0 || lines > 15) {
@@ -73,8 +66,14 @@ public class ScoreboradManager {
                 }
                 while (lines >= 1) {
                     String name = lines + "line" + linenumber;
-                    if (player.getScoreboard().getTeam(name) != null) {
-                        player.getScoreboard().getTeam(name).setSuffix(HexColor.translate(player, LangManager.getSidebarLine(linenumber)));
+                    for (Player people : Bukkit.getOnlinePlayers()) {
+                        if (people.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null ||
+                                !people.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getName().equalsIgnoreCase("mainscoreboard")) {
+                            return;
+                        }
+                        if (people.getScoreboard().getTeam(name) != null) {
+                            people.getScoreboard().getTeam(name).setSuffix(HexColor.translate(people, LangManager.getSidebarLine(linenumber)));
+                        }
                     }
                     lines--;
                     linenumber++;
@@ -83,156 +82,153 @@ public class ScoreboradManager {
         }.runTaskTimer(scoreboardplus, 0, 2);
     }
 
-    public void updatetablistfooterandheater(Player player) {
+    public void updatetablistfooterandheater() {
         new BukkitRunnable() {
 
             int linesfooter = LangManager.getFooterLines();
             int linesheaster = LangManager.getHeaderLines();
 
             public void run() {
-                if (player.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null ||
-                        !player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getName().equalsIgnoreCase("mainscoreboard")) {
-                    cancel();
-                    return;
+                for (Player player : Bukkit.getOnlinePlayers()){
+                    if (linesheaster == 5) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getHeaderLine(1) + "\n" + LangManager.getHeaderLine(2) + "\n" + LangManager.getHeaderLine(3) + "\n" +
+                                        LangManager.getHeaderLine(4) + "\n" + LangManager.getHeaderLine(5)));
+                    }
+                    if (linesheaster == 4) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getHeaderLine(1) + "\n" + LangManager.getHeaderLine(2) + "\n" + LangManager.getHeaderLine(3) + "\n" +
+                                        LangManager.getHeaderLine(4)));
+                    }
+                    if (linesheaster == 3) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getHeaderLine(1) + "\n" + LangManager.getHeaderLine(2) + "\n" + LangManager.getHeaderLine(3)));
+                    }
+                    if (linesheaster == 2) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getHeaderLine(1) + "\n" + LangManager.getHeaderLine(2)));
+                    }
+                    if (linesheaster == 1) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getHeaderLine(1)));
+                    }
+
+                    if (linesfooter == 5) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getFooterLine(1) + "\n" + LangManager.getFooterLine(2) + "\n" + LangManager.getFooterLine(3) + "\n" +
+                                        LangManager.getFooterLine(4) + "\n" + LangManager.getFooterLine(5)));
+
+                    }
+                    if (linesfooter == 4) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getFooterLine(1) + "\n" + LangManager.getFooterLine(2) + "\n" + LangManager.getFooterLine(3) + "\n" +
+                                        LangManager.getFooterLine(4)));
+                    }
+                    if (linesfooter == 3) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getFooterLine(1) + "\n" + LangManager.getFooterLine(2) + "\n" + LangManager.getFooterLine(3)));
+                    }
+                    if (linesfooter == 2) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getFooterLine(1) + "\n" + LangManager.getFooterLine(2)));
+                    }
+                    if (linesfooter == 1) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getFooterLine(1)));
+                    }
                 }
 
 
-                if (linesheaster == 5) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getHeaderLine(1) + "\n" + LangManager.getHeaderLine(2) + "\n" + LangManager.getHeaderLine(3) + "\n" +
-                                    LangManager.getHeaderLine(4) + "\n" + LangManager.getHeaderLine(5)));
-                }
-                if (linesheaster == 4) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getHeaderLine(1) + "\n" + LangManager.getHeaderLine(2) + "\n" + LangManager.getHeaderLine(3) + "\n" +
-                                    LangManager.getHeaderLine(4)));
-                }
-                if (linesheaster == 3) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getHeaderLine(1) + "\n" + LangManager.getHeaderLine(2) + "\n" + LangManager.getHeaderLine(3)));
-                }
-                if (linesheaster == 2) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getHeaderLine(1) + "\n" + LangManager.getHeaderLine(2)));
-                }
-                if (linesheaster == 1) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getHeaderLine(1)));
-                }
 
-                if (linesfooter == 5) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getFooterLine(1) + "\n" + LangManager.getFooterLine(2) + "\n" + LangManager.getFooterLine(3) + "\n" +
-                                    LangManager.getFooterLine(4) + "\n" + LangManager.getFooterLine(5)));
 
-                }
-                if (linesfooter == 4) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getFooterLine(1) + "\n" + LangManager.getFooterLine(2) + "\n" + LangManager.getFooterLine(3) + "\n" +
-                                    LangManager.getFooterLine(4)));
-                }
-                if (linesfooter == 3) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getFooterLine(1) + "\n" + LangManager.getFooterLine(2) + "\n" + LangManager.getFooterLine(3)));
-                }
-                if (linesfooter == 2) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getFooterLine(1) + "\n" + LangManager.getFooterLine(2)));
-                }
-                if (linesfooter == 1) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getFooterLine(1)));
-                }
 
 
             }
         }.runTaskTimer(scoreboardplus, 0, LangManager.getAnimatedHeaderAndFooterTicks());
     }
 
-    public void animatedheaterandfooter(Player player) {
+    public void animatedheaterandfooter() {
         new BukkitRunnable() {
             int animation = 1;
-            int linesfooter = LangManager.getAnimatedFooterLineInt();
-            int linesheaster = LangManager.getAnimatedHeaderLineInt();
+            final int linesfooter = LangManager.getAnimatedFooterLineInt();
+            final int linesheaster = LangManager.getAnimatedHeaderLineInt();
 
             public void run() {
-                if (player.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null ||
-                        !player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getName().equalsIgnoreCase("mainscoreboard")) {
-                    cancel();
-                    return;
-                }
                 if (animation > LangManager.getAnimationHeaderAndFooterInt()) {
                     animation = 1;
                 }
                 if (animation < 0 || animation > 10) {
                     animation = 1;
                 }
-                if (linesheaster == 5) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 4, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 5, "header")));
+                for (Player player : Bukkit.getOnlinePlayers()){
+                    if (linesheaster == 5) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 4, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 5, "header")));
+                    }
+                    if (linesfooter == 5) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 4, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 5, "footer")));
+                    }
+                    if (linesheaster == 4) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 4, "header")));
+                    }
+                    if (linesfooter == 4) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 4, "footer")));
+                    }
+                    if (linesheaster == 3) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "header")));
+                    }
+                    if (linesfooter == 3) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "footer")));
+                    }
+                    if (linesheaster == 2) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "header")));
+                    }
+                    if (linesfooter == 2) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer") + "\n" +
+                                        LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "footer")));
+                    }
+                    if (linesheaster == 1) {
+                        player.setPlayerListHeader(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header")));
+                    }
+                    if (linesfooter == 1) {
+                        player.setPlayerListFooter(HexColor.translate(player,
+                                LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer")));
+                    }
                 }
-                if (linesfooter == 5) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 4, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 5, "footer")));
-                }
-                if (linesheaster == 4) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 4, "header")));
-                }
-                if (linesfooter == 4) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 4, "footer")));
-                }
-                if (linesheaster == 3) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "header")));
-                }
-                if (linesfooter == 3) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 3, "footer")));
-                }
-                if (linesheaster == 2) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "header")));
-                }
-                if (linesfooter == 2) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer") + "\n" +
-                                    LangManager.getAnimatedHeaderAndFooterLine(animation, 2, "footer")));
-                }
-                if (linesheaster == 1) {
-                    player.setPlayerListHeader(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "header")));
-                }
-                if (linesfooter == 1) {
-                    player.setPlayerListFooter(HexColor.translate(player,
-                            LangManager.getAnimatedHeaderAndFooterLine(animation, 1, "footer")));
-                }
+
                 animation++;
             }
         }.runTaskTimer(scoreboardplus, 0, LangManager.getAnimatedHeaderAndFooterTicks());
     }
 
-    public void animatedSidebar(Player player) {
+    public void animatedSidebar() {
 
         new BukkitRunnable() {
             int animation = 1;
@@ -240,31 +236,29 @@ public class ScoreboradManager {
             int linenumber;
 
             public void run() {
+
                 lines = LangManager.getSideBarLinesInt();
                 linenumber = 1;
-                if (player.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null ||
-                        !player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getName().equalsIgnoreCase("mainscoreboard")) {
-                    cancel();
-                    return;
-                }
-
                 if (animation > LangManager.getAnimatedSideBarLinesInt()) {
                     animation = 1;
                 }
-
                 if (lines <= 0 || lines > 15) {
                     lines = 15;
                 }
                 if (linenumber > 15) {
                     linenumber = 1;
                 }
-
                 while (lines >= 1) {
-                    String name = lines + "line" + linenumber;
-                    if (player.getScoreboard().getTeam(name) != null) {
-                        player.getScoreboard().getTeam(name).setSuffix(HexColor.translate(player, LangManager.getAnimatedSidebarLine(animation, linenumber)));
+                    for (Player people : Bukkit.getOnlinePlayers()){
+                        if (people.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null ||
+                                !people.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getName().equalsIgnoreCase("mainscoreboard")) {
+                            return;
                     }
-
+                        String name = lines + "line" + linenumber;
+                        if (people.getScoreboard().getTeam(name) != null) {
+                            people.getScoreboard().getTeam(name).setSuffix(HexColor.translate(people, LangManager.getAnimatedSidebarLine(animation, linenumber)));
+                        }
+                    }
                     lines--;
                     linenumber++;
                 }
@@ -320,55 +314,6 @@ public class ScoreboradManager {
         }.runTaskTimer(scoreboardplus, 0, 2);
     }
 
-    public void updateTabListName(Player player) {
-
-
-        LuckPerms luckPerms = LuckPermsProvider.get();
-        new BukkitRunnable() {
-            public void run() {
-                if (player.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null) {
-                    cancel();
-                    return;
-                }
-                if (!player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getName().equalsIgnoreCase("mainscoreboard")) {
-                    cancel();
-                    return;
-                }
-
-                for (Player people : Bukkit.getOnlinePlayers()){
-
-                }
-
-                for (Player people : Bukkit.getOnlinePlayers()){
-                    User user = luckPerms.getUserManager().getUser(player.getUniqueId());
-                    User userPeople = luckPerms.getUserManager().getUser(people.getUniqueId());
-                    String groupnameuser = user.getCachedData().getMetaData().getPrimaryGroup();
-                    String groupnamepeople = userPeople.getCachedData().getMetaData().getPrimaryGroup();
-
-                    String teamname = player.getScoreboard().getEntityTeam(people).getName();
-                    Team team = player.getScoreboard().getEntityTeam(people);
-                    if (!(groupschar.get(groupnamepeople) + groupnamepeople).equals(player.getScoreboard().getEntityTeam(people).getName())){
-                        team.removeEntry(people.getName());
-                        Team team1 = player.getScoreboard().getTeam(groupschar.get(groupnamepeople) + groupnamepeople);
-                        team1.addEntry(people.getName());
-                        for (Group group : luckPerms.getGroupManager().getLoadedGroups()) {
-
-                            Team team2 = player.getScoreboard().getTeam(groupschar.get(group.getName()) + group.getName());
-                            team.setSuffix(HexColor.translate(player ,LangManager.getTabListSuffix()));
-                            String prefix = group.getCachedData().getMetaData().getPrefix();
-                            String line = LangManager.getTabListPrefix();
-                            String newline = line.replace("%rank_display_name%", prefix);
-                            team2.setPrefix(HexColor.translate(player, newline));
-                        }
-
-                    }
-
-                }
-            }
-        }.runTaskTimer(scoreboardplus, 0, 2);
-    }
-
-
     public void mainScoreBoard(Player player) {
 
         Objective objective = player.getScoreboard().registerNewObjective("mainscoreboard", "dummy");
@@ -407,15 +352,6 @@ public class ScoreboradManager {
             number--;
             lines--;
             linenumber++;
-        }
-
-        if (LangManager.getAminatedSideBarTitleBoolean()){
-            startanimationtitle(player);
-        }
-        if (!LangManager.getAminatedSideBarBoolean()){
-            updatesidebar(player);
-        }else {
-            animatedSidebar(player);
         }
     }
 
@@ -596,13 +532,6 @@ public class ScoreboradManager {
         if (lines == 1){
             player.setPlayerListHeader(HexColor.translate(player,
                     LangManager.getHeaderLine(1)));
-        }
-        if (LangManager.getAnimatedHeaderAndFooter()){
-            animatedheaterandfooter(player);
-        }else {
-            if (LangManager.getUpdateFooterAndHeader()){
-                updatetablistfooterandheater(player);
-            }
         }
     }
 

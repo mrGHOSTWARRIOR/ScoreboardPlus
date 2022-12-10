@@ -203,12 +203,6 @@ animation-10-sidebar-line-14: 'ANIMATION10'
 animation-10-sidebar-line-15: 'ANIMATION10'
 
 
-
-
-
-
-
-
 animated-sidebar-title: true
 #if sede bar is not animated:
 sidebar-title: 'title'
@@ -323,7 +317,6 @@ animated-bar-line-100: 'ANIMATION100'
 update-footer-header: true
 
 #TAB-LIST-HEADER (5 MAX LINES)
-animated-footer: true
 tab-header-lines: 5
 tab-header-line-1: 'Line1'
 tab-header-line-2: 'Line2'
