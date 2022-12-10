@@ -1,6 +1,7 @@
 package me.mrghostwarrior.tablistplus;
 
 import me.mrghostwarrior.tablistplus.command.ReloadConmmand;
+import me.mrghostwarrior.tablistplus.intance.PluginInstace;
 import me.mrghostwarrior.tablistplus.listener.ConnectListener;
 import me.mrghostwarrior.tablistplus.manager.ConfigManager;
 import me.mrghostwarrior.tablistplus.manager.LangManager;
@@ -24,11 +25,17 @@ public final class ScoreboardPlus extends JavaPlugin {
         scoreboradManager = new ScoreboradManager(this);
         getScoreboradManager().addtohashmap();
 
+
+
         getCommand("spreload").setExecutor(new ReloadConmmand(this));
 
         Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&l----------------------------------------"));
         Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', " &f&l&c&lThanks for using &b&lScoreboard&f&lPlus"));
         Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&l----------------------------------------"));
+
+
+        getScoreboradManager().updateTabListName();
+
     }
 
 

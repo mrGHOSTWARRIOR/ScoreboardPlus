@@ -34,7 +34,9 @@ public class LangManager {
     public static String getTabListSuffix(){ return lang.getString("tab-list-suffix");}
     public static String getTabListBelowName(){ return lang.getString("tab-list-belowname");}
     public static boolean getTabListBelownameBoolean() { return  lang.getBoolean("tab-list-belowname-boolean"); }
-
+    public static String getTabListName() { return lang.getString("tab-list-name"); }
+    public static boolean getCustomName() {return lang.getBoolean("custom-name"); }
+    public static boolean getSortByLuckPermsGroupWeight() { return lang.getBoolean("sort-by-luckperms-group-weight"); }
     //sidebar
     public static Boolean getAminatedSideBarBoolean() { return lang.getBoolean("animated-sidebar");}
     public static Integer getSideBarLinesInt(){ return lang.getInt("sidebar-lines");}

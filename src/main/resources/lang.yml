@@ -1,9 +1,9 @@
 #HEX COLORS AND & COLORS ARE AVAILABLE
 
-#Tablist ||| IMPORTANT !! USE %rank_display_name% TO DISPLAY EVERY LUCKPERMS PREFIX!
-update-tablist-prefix-and-sufix: true
-tab-list-prefix: '%rank_display_name%'
-tab-list-suffix: ' '
+#Tablist
+sort-by-luckperms-group-weight: true
+tab-list-prefix: '%luckperms_prefix%'
+tab-list-suffix: 'test'
 
 tab-list-belowname-boolean: false
 tab-list-belowname: ''

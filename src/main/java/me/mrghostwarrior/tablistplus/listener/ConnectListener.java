@@ -1,7 +1,9 @@
 package me.mrghostwarrior.tablistplus.listener;
 
 import me.mrghostwarrior.tablistplus.ScoreboardPlus;
+import me.mrghostwarrior.tablistplus.intance.PluginInstace;
 import me.mrghostwarrior.tablistplus.manager.ConfigManager;;
+import me.mrghostwarrior.tablistplus.manager.LangManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,6 +23,7 @@ public class ConnectListener implements Listener {
         if (ConfigManager.getTabListBoolean()){
             scoreboardplus.getScoreboradManager().createTabList(p);
             scoreboardplus.getScoreboradManager().addToTeam(p);
+
         }
         if (ConfigManager.getSideBarBoolean()){
             scoreboardplus.getScoreboradManager().mainScoreBoard(p);
