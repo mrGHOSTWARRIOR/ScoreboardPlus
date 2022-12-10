@@ -34,10 +34,14 @@ public class ScoreboradManager {
     public void startanimationtitle() {
         new BukkitRunnable() {
             int count = 0;
-            final int max = LangManager.getAnimatedbarLines() + 1;
+
 
             public void run() {
+                int max = LangManager.getAnimatedbarLines() + 1;
                 if (count == max) {
+                    count = 0;
+                }
+                if (count > max) {
                     count = 0;
                 }
                 for (Player player : Bukkit.getOnlinePlayers()){
@@ -84,11 +88,9 @@ public class ScoreboradManager {
 
     public void updatetablistfooterandheater() {
         new BukkitRunnable() {
-
-            int linesfooter = LangManager.getFooterLines();
-            int linesheaster = LangManager.getHeaderLines();
-
             public void run() {
+                int linesfooter = LangManager.getFooterLines();
+                int linesheaster = LangManager.getHeaderLines();
                 for (Player player : Bukkit.getOnlinePlayers()){
                     if (linesheaster == 5) {
                         player.setPlayerListHeader(HexColor.translate(player,
@@ -150,10 +152,11 @@ public class ScoreboradManager {
     public void animatedheaterandfooter() {
         new BukkitRunnable() {
             int animation = 1;
-            final int linesfooter = LangManager.getAnimatedFooterLineInt();
-            final int linesheaster = LangManager.getAnimatedHeaderLineInt();
+
 
             public void run() {
+                int linesfooter = LangManager.getAnimatedFooterLineInt();
+                int linesheaster = LangManager.getAnimatedHeaderLineInt();
                 if (animation > LangManager.getAnimationHeaderAndFooterInt()) {
                     animation = 1;
                 }
