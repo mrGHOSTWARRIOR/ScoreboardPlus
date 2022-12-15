@@ -539,6 +539,24 @@ public class ScoreboradManager {
     }
 
 
+    public void enableMethod() {
+        scoreboardplus.getScoreboradManager().updateTabListName();
+        if (!LangManager.getAminatedSideBarBoolean()){
+            scoreboardplus.getScoreboradManager().updatesidebar();
+        }else {
+            scoreboardplus.getScoreboradManager().animatedSidebar();
+        }
+        if (LangManager.getAnimatedHeaderAndFooter()){
+            scoreboardplus.getScoreboradManager().animatedheaterandfooter();
+        }else {
+            if (LangManager.getUpdateFooterAndHeader()){
+                scoreboardplus.getScoreboradManager().updatetablistfooterandheater();
+            }
+        }
+        if (LangManager.getAminatedSideBarTitleBoolean()){
+            scoreboardplus.getScoreboradManager().startanimationtitle();
+        }
+    }
 }
 
 
